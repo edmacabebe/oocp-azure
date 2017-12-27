@@ -1,0 +1,63 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"_artifactsLocation": {
+			"value": "http://gogs-gogs.104.225.218.197.nip.io/bcorpus/openshift-origin.git"
+		},
+		"masterVmSize": {
+			"value": "Standard_D1_v2"
+		},
+		"infraVmSize": {
+			"value": "Standard_D1_v2"
+		},
+		"nodeVmSize": {
+			"value": "Standard_D1_v2"
+		},
+		"openshiftClusterPrefix": {
+			"value": "mycluster"
+		},
+		"masterInstanceCount": {
+			"value": 3
+		},
+		"infraInstanceCount": {
+			"value": 2
+		},
+		"nodeInstanceCount": {
+			"value": 1
+		},
+		"dataDiskSize": {
+			"value": 128
+		},
+		"adminUsername": {
+			"value": "edm"
+		},
+		"openshiftPassword": {
+			"value": "asdfgh"
+		},
+		"sshPublicKey": {
+			"value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBrIBp0YusLFMQAn2a4XFHXftYUi0b4RBg6VsmaEHXlPscxWoe0dk/Nk7tDqQcRpaRiKrR7yR4ZcFA+u7bTuKn/75BY5KvSs7BUOTVe8JdalPIjqJ553sL0qDerDbr2KCl89nWSovxbBpuqu2DUrA+h8D59rDKDNqwnsiDnsy9HSydpgCiGCQ33y5M+7A8YUTPbYE+ChaPQjX3xMJkqVO7WOzOMpEUE3hFWCPPSkq8ieYiUNy6TYl0O6uJ1A3mNa4rW9w/sEG5F8u+17HsDbk/RnFESSG6gKLqIh8x/m5vVp2Np8sN9wAl09QHOVKtlZIogIM9Hm7X78cR05fKjMrf edisonmacabebe@Edisons-MacBook-Pro.local"
+		},
+		"keyVaultResourceGroup": {
+			"value": "INGASIAOOCP"
+		},
+		"keyVaultName": {
+			"value": "INGASIAOOCP-KV"
+		},
+		"keyVaultSecret": {
+			"value": "SecretName"
+		},
+		"aadClientId": {
+			"value": "b5274777-45fb-47df-8fbc-c514bb8d8c42"
+		},
+		"aadClientSecret": {
+			"value": "Pass@word1"
+		},
+		"defaultSubDomainType": {
+			"value": "nipio"
+		},
+		"defaultSubDomain": {
+			"value": "changeme"
+		}
+	}
+}
