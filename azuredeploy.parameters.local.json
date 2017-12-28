@@ -3,19 +3,19 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "http://gogs-gogs.104.225.218.197.nip.io/bcorpus/openshift-origin/raw/v3.6.1/"
+			"value": "https://raw.githubusercontent.com/edmacabebe/oocp-azure/master/"
 		},
 		"masterVmSize": {
-			"value": "Standard_D2_v3"
+			"value": "Standard_D1_v2"
 		},
 		"infraVmSize": {
-			"value": "Standard_D2_v3"
+			"value": "Standard_D1_v2"
 		},
 		"nodeVmSize": {
-			"value": "Standard_D2_v3"
+			"value": "Standard_D1_v2"
 		},
 		"openshiftClusterPrefix": {
-			"value": "mycluster"
+			"value": "banking"
 		},
 		"masterInstanceCount": {
 			"value": 3
@@ -30,7 +30,7 @@
 			"value": 128
 		},
 		"adminUsername": {
-			"value": "edm"
+			"value": "oocpadmin"
 		},
 		"openshiftPassword": {
 			"value": "asdfgh"
@@ -48,7 +48,7 @@
 			"value": "INGASIAOOCP-Secret"
 		},
 		"aadClientId": {
-			"value": "b11b8a22-7098-4ab2-8c85-3efa589f15f3"
+			"value": "d0a9ad03-29c6-4fee-a506-8465b3000913"
 		},
 		"aadClientSecret": {
 			"value": "Pass@word1"
