@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "https://raw.githubusercontent.com/edmacabebe/oocp-azure/master/"
+			"value": "https://ingasia-gitlab.southeastasia.cloudapp.azure.com/emacabebe/oocp-azure.git"
 		},
 		"masterVmSize": {
 			"value": "Standard_D1_v2"
@@ -18,7 +18,7 @@
 			"value": "banking"
 		},
 		"masterInstanceCount": {
-			"value": 3
+			"value": 2
 		},
 		"infraInstanceCount": {
 			"value": 2
@@ -48,7 +48,7 @@
 			"value": "INGASIAOOCP-Secret"
 		},
 		"aadClientId": {
-			"value": "d0a9ad03-29c6-4fee-a506-8465b3000913"
+			"value": "18836a5f-1436-4b06-ab8b-ec73c2e01335"
 		},
 		"aadClientSecret": {
 			"value": "Pass@word1"
