@@ -3,10 +3,10 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "https://ingasia-gitlab.southeastasia.cloudapp.azure.com/emacabebe/oocp-azure/raw/master/"
+			"value": "https://github.com/edmacabebe/openshift-origin/blob/master/"
 		},
 		"masterVmSize": {
-			"value": "Standard_D1_v2"
+			"value": "Standard_DS2_v2"
 		},
 		"infraVmSize": {
 			"value": "Standard_D1_v2"
@@ -18,7 +18,7 @@
 			"value": "banking"
 		},
 		"masterInstanceCount": {
-			"value": 2
+			"value": 3
 		},
 		"infraInstanceCount": {
 			"value": 2
@@ -48,7 +48,7 @@
 			"value": "INGASIAOOCP-Secret"
 		},
 		"aadClientId": {
-			"value": "915d787b-cffb-46bd-ade5-fe95ecafeaa9"
+			"value": "a7c6337d-0bcc-46a8-9466-1fc63e040bec"
 		},
 		"aadClientSecret": {
 			"value": "Pass@word1"
