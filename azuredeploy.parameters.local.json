@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "https://github.com/edmacabebe/openshift-origin/blob/master/"
+			"value": "https://raw.githubusercontent.com/edmacabebe/openshift-origin/master/"
 		},
 		"masterVmSize": {
 			"value": "Standard_DS2_v2"
