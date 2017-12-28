@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "https://ingasia-gitlab.southeastasia.cloudapp.azure.com/emacabebe/oocp-azure.git"
+			"value": "https://ingasia-gitlab.southeastasia.cloudapp.azure.com/emacabebe/oocp-azure/raw/master/"
 		},
 		"masterVmSize": {
 			"value": "Standard_D1_v2"
@@ -48,7 +48,7 @@
 			"value": "INGASIAOOCP-Secret"
 		},
 		"aadClientId": {
-			"value": "18836a5f-1436-4b06-ab8b-ec73c2e01335"
+			"value": "915d787b-cffb-46bd-ade5-fe95ecafeaa9"
 		},
 		"aadClientSecret": {
 			"value": "Pass@word1"
