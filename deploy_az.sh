@@ -8,17 +8,14 @@ if [ "$sp_id" != "" ]
 then
   az ad sp delete --id $sp_id
 fi
-az ad sp create-for-rbac -n openshiftcloudprovider --password Pass@word1 --role contributor --scopes
+#az ad sp create-for-rbac -n openshiftcloudprovider --password Pass@word1 --role contributor --scopes
 
-/subscriptions/ff6294e2-6c87-4b62-b3a3-aba5e0a17c8d/resourceGroups/INGAsiaOriginOCP
+#/subscriptions/ff6294e2-6c87-4b62-b3a3-aba5e0a17c8d/resourceGroups/INGAsiaOriginOCP
 
-az ad sp create-for-rbac -n openshiftcloudprovider --password Pass@word1 --role contributor --skip-assignment
+#az ad sp create-for-rbac -n openshiftcloudprovider --password Pass@word1 --role contributor --skip-assignment
 #b5274777-45fb-47df-8fbc-c514bb8d8c42
 #az group deployment create --resource-group INGASIAOOCP --template-file azuredeploy.json --parameters @azuredeploy.parameters.local.json --no-wait
-
-scp -v -i ~/.ssh/id_rsa -P 2200 scripts/deployOpenShift.sh edm@52.187.130.254
-ssh -v -i ~/.ssh/id_rsa edm@52.187.130.254 -p 2200
-
-Phase 1: Provision the Virtual Machines on Microsoft Azure
-Phase 2: Install OpenShift Container Platform on Microsoft Azure
-Phase 3: Post deployment activities
+#az group delete --name INGASIAOOCP --verbose
+#scp -v -i ~/.ssh/id_rsa -P 2200 scripts/deployOpenShift.sh edm@52.187.130.254
+#ssh -v -i ~/.ssh/id_rsa oocpadmin@52.187.167.176 -p 2200
+#52.187.167.176

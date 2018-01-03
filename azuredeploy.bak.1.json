@@ -8,7 +8,7 @@
 				"description": "The base URL where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated.",
 				"artifactsBaseUrl": ""
 			},
-			"defaultValue": "https://raw.githubusercontent.com/edmacabebe/openshift-origin/master/"
+			"defaultValue": "https://raw.githubusercontent.com/edmacabebe/oocp-azure/master/"
 		},
 		"masterVmSize": {
 			"type": "string",
@@ -93,15 +93,15 @@
 		},
 		"masterInstanceCount": {
 			"type": "int",
-			"defaultValue": 1,
-			"allowedValues": [1, 3, 5],
+			"defaultValue": 3,
+			"allowedValues": [2, 3, 5],
 			"metadata": {
 				"description": "Number of OpenShift masters."
 			}
 		},
 		"infraInstanceCount": {
 			"type": "int",
-			"defaultValue": 1,
+			"defaultValue": 2,
 			"allowedValues": [1, 2, 3],
 			"metadata": {
 				"description": "Number of OpenShift infra nodes."
@@ -193,7 +193,7 @@
 		},
 		"defaultSubDomain": {
 			"type": "string",
-			"defaultValue": "contoso.com",
+			"defaultValue": "ing.com",
 			"metadata": {
 				"description": "Default Subdomain for application routing (Wildcard DNS) - must enter something even if you are using nip.io"
 			}
@@ -1239,7 +1239,8 @@
 					]
 				},
 				"protectedSettings": {
-					"commandToExecute": "[concat('bash ', variables('masterPrepScriptFileName'), ' ', variables('newStorageAccountPersistentVolume1'), ' ', parameters('adminUsername'))]"
+					"commandToExecute": "[concat('bash ', variables('masterPrepScriptFileName'), ' ',
+						variables('newStorageAccountPersistentVolume1'), ' ', variables('location') , ' ', parameters('adminUsername'))]"
 				}
 			}
 		}, {

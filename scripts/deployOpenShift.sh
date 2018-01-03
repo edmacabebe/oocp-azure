@@ -63,8 +63,8 @@ echo "NODELOOP=$((NODECOUNT - 1))" >> /tmp/variables.log
 # Generate private keys for use by Ansible
 echo $(date) " - Generating Private keys for use by Ansible for OpenShift Installation"
 
-#runuser -l $SUDOUSER -c "echo \"$PRIVATEKEY\" > ~/.ssh/id_rsa"
-#runuser -l $SUDOUSER -c "chmod 600 ~/.ssh/id_rsa*"
+runuser -l $SUDOUSER -c "echo \"$PRIVATEKEY\" > ~/.ssh/id_rsa"
+runuser -l $SUDOUSER -c "chmod 600 ~/.ssh/id_rsa*"
 
 echo $(date) "- Configuring SSH ControlPath to use shorter path name"
 
@@ -469,26 +469,26 @@ cat >> /etc/ansible/hosts <<EOF
 EOF
 
 echo $(date) " - Cloning openshift-ansible repo for use in installation"
-#runuser -l $SUDOUSER -c "git clone --single-branch --branch release-3.6 https://github.com/openshift/openshift-ansible /home/$SUDOUSER/openshift-ansible"
+runuser -l $SUDOUSER -c "git clone --single-branch --branch release-3.6 https://github.com/openshift/openshift-ansible /home/$SUDOUSER/openshift-ansible"
 
 echo $(date) " - Running network_manager.yml playbook"
 DOMAIN=`domainname -d`
 
 # Setup NetworkManager to manage eth0
-#runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/openshift-node/network_manager.yml"
+runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/openshift-node/network_manager.yml"
 
 echo $(date) " - Setting up NetworkManager on eth0"
 # Configure resolv.conf on all hosts through NetworkManager
 
-#runuser -l $SUDOUSER -c "ansible all -b -m service -a \"name=NetworkManager state=restarted\""
+runuser -l $SUDOUSER -c "ansible all -b -m service -a \"name=NetworkManager state=restarted\""
 sleep 5
-#runuser -l $SUDOUSER -c "ansible all -b -m command -a \"nmcli con modify eth0 ipv4.dns-search $DOMAIN\""
-#runuser -l $SUDOUSER -c "ansible all -b -m service -a \"name=NetworkManager state=restarted\""
+runuser -l $SUDOUSER -c "ansible all -b -m command -a \"nmcli con modify eth0 ipv4.dns-search $DOMAIN\""
+runuser -l $SUDOUSER -c "ansible all -b -m service -a \"name=NetworkManager state=restarted\""
 
 # Initiating installation of OpenShift Container Platform using Ansible Playbook
 echo $(date) " - Installing OpenShift Container Platform via Ansible Playbook"
 
-#runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/config.yml"
+runuser -l $SUDOUSER -c "ansible-playbook openshift-ansible/playbooks/byo/config.yml"
 
 echo $(date) " - Modifying sudoers"
 
@@ -508,22 +508,22 @@ sed -i -e "s/# Defaults    requiretty/Defaults    requiretty/" /etc/sudoers
 # Adding user to OpenShift authentication file
 echo $(date) "- Adding OpenShift user"
 
-#runuser -l $SUDOUSER -c "ansible-playbook ~/addocpuser.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/addocpuser.yml"
 
 # Assigning cluster admin rights to OpenShift user
 echo $(date) "- Assigning cluster admin rights to user"
 
-#runuser -l $SUDOUSER -c "ansible-playbook ~/assignclusteradminrights.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/assignclusteradminrights.yml"
 
 # Create Storage Class
 echo $(date) "- Creating Storage Class"
 
-#runuser -l $SUDOUSER -c "ansible-playbook ~/configurestorageclass.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/configurestorageclass.yml"
 
 # Configure Docker Registry to use Azure Storage Account
 echo $(date) "- Configuring Docker Registry to use Azure Storage Account"
 
-#runuser -l $SUDOUSER -c "ansible-playbook ~/dockerregistry.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/dockerregistry.yml"
 
 echo $(date) "- Sleep for 120"
 
@@ -532,9 +532,9 @@ sleep 120
 # Execute setup-azure-master and setup-azure-node playbooks to configure Azure Cloud Provider
 echo $(date) "- Configuring OpenShift Cloud Provider to be Azure"
 
-#runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-master.yml"
-#runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-node-master.yml"
-#runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-node.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-master.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-node-master.yml"
+runuser -l $SUDOUSER -c "ansible-playbook ~/setup-azure-node.yml"
 
 # Delete postinstall files
 echo $(date) "- Deleting post installation files"
