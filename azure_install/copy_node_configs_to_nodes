@@ -1,0 +1,8 @@
+DATE=$(date +%s)
+for node in $(ls *node.config|sed 's/\(.*\).node.config/\1/g')
+do
+ scp $node.node.config $node:
+ echo "================$node ================="
+ ssh $node "sudo cp /etc/origin/node/node-config.yaml /etc/origin/node/node-config.yaml.$DATE && sudo cp $node.node.config /etc/origin/node/node-config.yaml"
+ ssh $node "sudo grep azure.conf /etc/origin/node/node-config.yaml"
+done

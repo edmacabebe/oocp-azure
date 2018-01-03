@@ -18,3 +18,7 @@ az ad sp create-for-rbac -n openshiftcloudprovider --password Pass@word1 --role 
 
 scp -v -i ~/.ssh/id_rsa -P 2200 scripts/deployOpenShift.sh edm@52.187.130.254
 ssh -v -i ~/.ssh/id_rsa edm@52.187.130.254 -p 2200
+
+Phase 1: Provision the Virtual Machines on Microsoft Azure
+Phase 2: Install OpenShift Container Platform on Microsoft Azure
+Phase 3: Post deployment activities

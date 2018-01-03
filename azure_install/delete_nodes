@@ -1,0 +1,6 @@
+NODES="mycluster-infra-0 mycluster-master-0 mycluster-node-0"
+for node in $NODES
+do 
+   echo "Delete node $node"
+   oc delete node $node
+done

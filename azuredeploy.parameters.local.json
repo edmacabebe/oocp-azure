@@ -9,19 +9,19 @@
 			"value": "Standard_DS2_v2"
 		},
 		"infraVmSize": {
-			"value": "Standard_D1_v2"
+			"value": "Standard_DS2_v2"
 		},
 		"nodeVmSize": {
-			"value": "Standard_D1_v2"
+			"value": "Standard_DS2_v2"
 		},
 		"openshiftClusterPrefix": {
 			"value": "banking"
 		},
 		"masterInstanceCount": {
-			"value": 3
+			"value": 1
 		},
 		"infraInstanceCount": {
-			"value": 2
+			"value": 1
 		},
 		"nodeInstanceCount": {
 			"value": 1
@@ -57,7 +57,7 @@
 			"value": "nipio"
 		},
 		"defaultSubDomain": {
-			"value": "changeme"
+			"value": "asia.ing.com"
 		}
 	}
 }

@@ -1,0 +1,4 @@
+sudo cp mypasswd /etc/origin/master/htpasswd
+oc login -u system:admin
+oc adm policy add-cluster-role-to-user cluster-admin azureuser
+

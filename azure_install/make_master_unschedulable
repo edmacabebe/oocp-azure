@@ -1,0 +1,1 @@
+oc adm manage-node mycluster-master-0 --schedulable=false

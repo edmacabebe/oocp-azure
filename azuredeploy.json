@@ -193,7 +193,7 @@
 		},
 		"defaultSubDomain": {
 			"type": "string",
-			"defaultValue": "contoso.com",
+			"defaultValue": "ing.com",
 			"metadata": {
 				"description": "Default Subdomain for application routing (Wildcard DNS) - must enter something even if you are using nip.io"
 			}
@@ -1239,7 +1239,8 @@
 					]
 				},
 				"protectedSettings": {
-					"commandToExecute": "[concat('bash ', variables('masterPrepScriptFileName'), ' ', variables('newStorageAccountPersistentVolume1'), ' ', variables('location') , ' ', parameters('adminUsername'))]"
+					"commandToExecute": "[concat('bash ', variables('masterPrepScriptFileName'), ' ',
+						variables('newStorageAccountPersistentVolume1'), ' ', variables('location') , ' ', parameters('adminUsername'))]"
 				}
 			}
 		}, {

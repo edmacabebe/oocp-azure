@@ -1,0 +1,2 @@
+oc create -f /home/azureuser/scgeneric1.yml
+oc get storageclasses

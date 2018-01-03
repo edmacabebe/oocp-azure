@@ -1,0 +1,1 @@
+ssh mycluster-master-0 "sudo systemctl restart origin-master"

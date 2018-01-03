@@ -1,0 +1,59 @@
+# Create an OSEv3 group that contains the masters and nodes groups
+[OSEv3:children]
+masters
+nodes
+etcd
+master0
+new_nodes
+
+# Set variables common for all OSEv3 hosts
+[OSEv3:vars]
+ansible_ssh_user=azureuser
+ansible_become=yes
+openshift_install_examples=true
+openshift_deployment_type=origin
+openshift_release=v3.6
+# Need this repo for openvswitch RPMs
+openshift_additional_repos=[{'id': 'ovirt-4.2', 'name': 'ovirt-4.2', 'baseurl': 'http://mirror.centos.org/centos/7/virt/x86_64/ovirt-4.2/', 'enabled': 1, 'gpgcheck': 0}]
+docker_udev_workaround=True
+openshift_use_dnsmasq=True
+openshift_master_default_subdomain=52.224.217.88.nip.io
+openshift_override_hostname_check=true
+osm_use_cockpit=false
+#os_sdn_network_plugin_name='redhat/openshift-ovs-multitenant'
+#console_port=443
+openshift_cloudprovider_kind=azure
+osm_default_node_selector='type=app'
+openshift_disable_check=disk_availability,memory_availability
+# default selectors for router and registry services
+openshift_router_selector='type=infra'
+openshift_registry_selector='type=infra'
+template_service_broker_selector={ 'type': 'infra' }
+
+openshift_master_cluster_method=native
+openshift_master_cluster_hostname=masterdnsr6bxuqtpa66b4.eastus.cloudapp.azure.com
+openshift_master_cluster_public_hostname=masterdnsr6bxuqtpa66b4.eastus.cloudapp.azure.com
+openshift_master_cluster_public_vip=52.224.216.180
+
+# Enable HTPasswdPasswordIdentityProvider
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+
+# host group for masters
+[masters]
+mycluster-master-[0:0]
+
+# host group for etcd
+[etcd]
+mycluster-master-[0:0]
+
+[master0]
+mycluster-master-0
+
+# host group for nodes
+[nodes]
+mycluster-master-0 openshift_node_labels="{'type': 'master', 'zone': 'default'}" openshift_hostname=mycluster-master-0
+mycluster-infra-0 openshift_node_labels="{'type': 'infra', 'zone': 'default'}" openshift_hostname=mycluster-infra-0
+mycluster-node-0 openshift_node_labels="{'type': 'app', 'zone': 'default'}" openshift_hostname=mycluster-node-0
+
+# host group for adding new nodes
+[new_nodes]

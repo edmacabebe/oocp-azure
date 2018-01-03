@@ -1,0 +1,7 @@
+for node in $(ls *master.config|sed 's/\(.*\).master.config/\1/g')
+do
+ scp $node.master.config $node:
+ echo "================$node ================="
+ ssh $node "sudo cp /etc/origin/master/master-config.yaml /etc/origin/master/master-config.yaml.$DATE && sudo cp $node.master.config /etc/origin/master/master-config.yaml"
+ ssh $node "sudo grep azure.conf /etc/origin/master/master-config.yaml"
+done
