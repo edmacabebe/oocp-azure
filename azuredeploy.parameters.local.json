@@ -48,7 +48,7 @@
 			"value": "INGASIAOOCP-Secret"
 		},
 		"aadClientId": {
-			"value": "f711503a-e052-470e-a62e-8cd306b7e9a0"
+			"value": "9834688d-d767-4c92-a971-68e317357be6"
 		},
 		"aadClientSecret": {
 			"value": "Pass@word1"
@@ -57,7 +57,7 @@
 			"value": "nipio"
 		},
 		"defaultSubDomain": {
-			"value": "asia.ing.com"
+			"value": "changeme"
 		}
 	}
 }
