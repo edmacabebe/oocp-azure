@@ -386,9 +386,7 @@ EOF
 # Create Playbook to install OSo
 cat > /home/${SUDOUSER}/installoso.yml <<EOF
 ---
-- include: openshift-ansible/playbooks/byo/config.yml
-  async: 60
-  poll: 15
+- import_playbook: openshift-ansible/playbooks/byo/config.yml
 EOF
 
 # Create Ansible Hosts File
